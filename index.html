@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PODIA-3D: Domain Adaptation of 3D Generative Model Across Large Domain Gap Using Pose-Preserved Text-to-Image Diffusion">
+  <meta name="keywords" content="PODIA-3D, Text-guided Domain Adaptation, 3D Generative Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PODIA-3D: Domain Adaptation of 3D Generative Model Across Large Domain Gap Using Pose-Preserved Text-to-Image Diffusion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/happy_favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://gwang-kim.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/gwang-kim/DiffusionCLIP">
+            DiffusionCLIP
+          </a>
+          <a class="navbar-item" href="https://gwang-kim.github.io/datid_3d/">
+            DATID-3D
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2 publication-title">PODIA-3D: Domain Adaptation <br> of 3D Generative Model Across Large Domain Gap <br>Using Pose-Preserved Text-to-Image Diffusion</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://gwang-kim.github.io/">Gwanghyun Kim</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Ji Ha Jang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://icl.snu.ac.kr/pi">Se Young Chun</a><sup>1,2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Dept. of Electrical and Computer Engineering,</span>
+            <span class="author-block"><sup>2</sup>INMC, Interdisciplinary Program in AI</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Seoul National University, Korea</span>
+          </div>
+<!--          <span class="author-block">-->
+<!--            <h1 class="title is-size-4  publication-venue"></h1>-->
+<!--          </span>-->
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+<!--              <span class="link-block">-->
+<!--                <a href="https://www.youtube.com/"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fab fa-youtube"></i>-->
+<!--                  </span>-->
+<!--                  <span>Video</span>-->
+<!--                </a>-->
+<!--              </span>-->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/gwang-kim/PODIA-3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+        </div>
+      </div>
+
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/Supplementary_video_PODIA-3D.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <p>
+        <b> PODIA-3D </b> successfully adapts 3D generators <b> across significant domain gaps </b>, producing excellent text-image correspondence and 3D shapes, while the baselines fail.
+        </p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered", style='background-color: #F7F7F7'>
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, significant advancements have been made in 3D generative models, however training these models across diverse domains is challenging and requires an enormous amount of training data and knowledge of pose distribution.
+          </p>
+
+          <p>
+            Text-guided domain adaptation methods have allowed the generator to be adapted to the target domains using text prompts, thereby obviating the need for assembling numerous data. Recently, DATID-3D presents impressive quality of view consistent images in text-guided domain, preserving diversity in text by leveraging text-to-image diffusion models. However, adapting 3D generators to domains with significant domain gaps from the source domain still remains challenging due to issues in current text-to-image diffusion models. These issues include: 1) shape-pose trade-off in diffusion-based translation, 2) pose bias, and 3) instance bias in the target domain, resulting in inferior 3D shapes, low text-image correspondence, and low intra-domain diversity in the generated samples.
+          </p>
+
+          <p>
+            <b> To address these issues, we propose a novel pipeline called PODIA-3D, which uses pose-preserved text-to-image diffusion-based domain adaptation for 3D generative models.</b>
+            We construct a pose-preserved text-to-image diffusion model that allows the use of extremely high-level noise for significant domain changes. We also propose specialized-to-general sampling strategies to improve the details of the generated samples. Moreover, to overcome the instance bias, we introduce a text-guided debiasing method that improves intra-domain diversity. Consequently, our method successfully adapts 3D generators across significant domain gaps, producing excellent text-image correspondence and 3D shapes, while the baselines mostly fail. Our qualitative results and user study demonstrates that our approach outperforms existing 3D text-guided domain adaptation methods in terms of text-image correspondence, realism, diversity of rendered images, and sense of depth of 3D shapes in the generated samples.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+ <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/images/method1.jpg"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                  Overview of PODIA-3D. (a) We prepare data for training pose-preserved diffusion models (PPD) and (b) fine-tune the depth-guided diffusion models on the collected data. (c) We use a specialized-to-general sampling strategies to generate high quality pose-aware target images. (d) Finally, we fine-tune the state-of-the-art 3D generator on them adversarially.
+              </h2>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Domain Adaptation of 3D Generative Model Across Large Domain Gap</h2>
+
+          <div className="item is-max-desktop">
+              <img id="result1"
+                      style="width:100%;height:auto;"
+                      src="./static/images/method1-result1.jpg"
+                      alt={"result1"}>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <div className="item is-max-desktop">
+              <img id="result2"
+                      style="width:100%;height:auto;"
+                      src="./static/images/method1-result2.jpg"
+                      alt={"result1"}>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <div className="item is-max-desktop">
+              <img id="result3"
+                      style="width:100%;height:auto;"
+                      src="./static/images/method1-result3.png"
+                      alt={"result1"}>
+          </div>
+
+      </div>
+    </div>
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Text-Guided Debiasing</h2>
+
+          <div className="container is-max-desktop">
+              <img id="instance_selected"
+                      style="width:60%;height:auto;"
+                      src="./static/images/method2.jpg"
+                      alt={"instance_selected"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                  Our text-guided debiasing method includes obtaining a set of subclass texts, and then generating a pose-aware target dataset for each subclass text. We combine these datasets to construct a debiased target dataset.
+              </h2>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+          <div className="item is-max-desktop">
+              <img id="result4"
+                      style="width:60%;height:auto;"
+                      src="./static/images/method2-result1.jpg"
+                      alt={"result1"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                  Our text-guided debiasing method improves intra-domain diversity of the results of text-guided domain adaptation.
+              </h2>
+          </div>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{kim2022datid3d,
+      title={PODIA-3D: Domain Adaptation of 3D Generative Model Across Large Domain Gap Using Pose-Preserved Text-to-Image Diffusion},
+      author={Gwanghyun Kim, Ji Ha Jang, and Se Young Chun},
+      year={2023},
+      eprint={},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+<!--      <a class="icon-link"-->
+<!--         href="">-->
+<!--        <i class="fas fa-file-pdf"></i>-->
+<!--      </a>-->
+      <a class="icon-link" href="https://github.com/gwang-kim" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
