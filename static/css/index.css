@@ -36,6 +36,8 @@ body {
 
 }
 
+
+
 .publication-banner video {
   position: relative;
   left: auto;
@@ -51,14 +53,14 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
-.publication-authors {
+.publication-venue {
+    color: #a65db4;
     font-family: 'Google Sans', sans-serif;
 }
 
-.publication-venue {
-    color: #0b5394;
-    width: fit-content;
-    font-weight: bold;
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
 }
 
 .publication-awards {
