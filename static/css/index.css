@@ -53,13 +53,14 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
-.publication-venue {
-    color: #a65db4;
+.publication-authors {
     font-family: 'Google Sans', sans-serif;
 }
 
 
-.publication-authors {
+
+.publication-venue {
+    color: #a65db4;
     font-family: 'Google Sans', sans-serif;
 }
 
